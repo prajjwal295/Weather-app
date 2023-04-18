@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body
+    style=" background:url(https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGdyYWRpZW50fGVufDB8fDB8fA%3D%3D&w=1000&q=80);background-size: cover;  background-repeat: no-repeat;">
+    <div class="container">
+        <p class="top-text bold rem-2">
+            WEATHER APP &#9925;
+        </p>
+        <div class="navigation bold">
+            <p class="your-weather background-wht">Your Weather</p>
+            <p class="search-weather background-wht">Search Weather</p>
+        </div>
+
+        <!-- we have to access location -->
+        <div class="case-1">
+            <img class="loc-img margin" src="location.png"/>
+            <p class="bold rem-2 margin" >Grant Location Acces</p>
+            <p class="bold rem-1 margin">Allow location to get weather Information</p>
+            <button class="btn margin" data-grantAccess>Grant Access</button>
+        </div>
+
+        <!-- Searchbox -->
+
+        <form class="case-2 hidden">
+            <input placeholder-value type="text" value="" placeholder="Search for City..." class="placeholder-btn placeholder-white text-white ">
+            <button type="button" class="circleBtn">
+                <img class="search-img" src="search.png">
+            </button>
+        </form>
+
+        <div class="flex loading-box hidden">
+            <img src="loading.gif" alt="loader">
+            <p class="uppercase text-white text-lg ">Loading</p>
+        </div>
+
+        <!-- create the result page -->
+        <div class="case-3 hidden">
+            <div class="city-logo  flex bold">
+                <p data-cityName class="city-name uppercase">city</p>
+                <img src="" data-countryIcon class="flag">
+            </div>
+           
+            <p data-weatherDesc class="rem-1 bold uppercase"></p>
+            <img data-weatherIcon class="weather-img">
+            <p data-temp class="temp bold rem-1"></p>
+            
+            <div class="cards flex">
+
+                <div class="box">
+                    <img src="wind.png" class="size-value"/>
+                    <p class="bold">WINDSPEED</p>
+                    <p data-windspeed class ="rem-1 bold">-</p>
+                </div>
+                <div class="box">
+                    <img src="cloud.png" class="size-value"/>
+                    <p class="bold">CLOUD</p>
+                    <p data-cloudiness class=" rem-1 bold">-</p>
+                </div>
+                <div class="box">
+                    <img src="humidity.png" class="size-value"/>
+                    <p class="bold">HUMIDITY</p>
+                    <p data-humidity class=" rem-1 bold">-</p>
+                </div>
+            </div>
+
+        </div> 
+        <div class="api-error-container flex flex-col items-center hidden">
+            <img src="not-found.png" width="300" height="300" alt="404" data-notFoundImg >
+            <p data-apierrortext class="text-white text-lg uppercase "></p>
+            <button class="btn" data-apiErrorBtn>Retry</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
