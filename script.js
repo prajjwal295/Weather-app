@@ -172,8 +172,3 @@ searchBtn.onclick = () => {
     const city = placeholderbtn.value.toUpperCase()
     findOtherState(city);
 }
-
-placeholderbtn.onclick = () =>{
-    const city = placeholderbtn.value.toUpperCase()
-    findOtherState(city);
-}
